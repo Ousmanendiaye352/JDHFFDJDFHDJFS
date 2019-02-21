@@ -1,0 +1,92 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-title class="title-periode">
+          Le mois dernier
+        </ion-title>
+      </ion-col>
+      <ion-col size="12">
+        <!-- List of Sliding Items -->
+        <ion-list>
+          <ion-item-sliding (click)="presentAlert('PAIEMENT', 'Brioche dorée', '15 000')">
+            <ion-item>
+              <img class="icon-serv" src="assets/icon/services/2.jpg">
+              <ion-label float-left><span class="num-trans marron">77 591 96 86</span><br><span class="type-serv">PAIEMENT</span></ion-label>
+              <ion-label float-right><span float-right class="num-trans"> 15 000 CFA</span><br><span float-right class="type-serv orange">Brioche dorée</span></ion-label>
+            </ion-item>
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="deleteOfHistory('item')">Supprimer</ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+
+          <ion-item-sliding (click)="presentAlert('RECHARGE', 'Orange Money', '60 000')">
+            <ion-item>
+              <img class="icon-serv" src="assets/icon/services/1.jpg">
+              <ion-label float-left><span class="num-trans marron">77 591 96 86</span><br><span class="type-serv">RECHARGE</span></ion-label>
+              <ion-label float-right><span float-right class="num-trans green"> 60 000 CFA</span><br><span float-right class="type-serv orange">Orange Money</span></ion-label>
+            </ion-item>
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="deleteOfHistory('item')">Supprimer</ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+
+          <ion-item-sliding (click)="presentAlert('PAIEMENT', 'Clinique SUMA', '30 000')">
+            <ion-item>
+              <img class="icon-serv" src="assets/icon/services/2.jpg">
+              <ion-label float-left><span class="num-trans marron">77 591 96 86</span><br><span class="type-serv">PAIEMENT</span></ion-label>
+              <ion-label float-right><span float-right class="num-trans"> 30 000 CFA</span><br><span float-right class="type-serv orange">Clinique SUMA</span></ion-label>
+            </ion-item>
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="deleteOfHistory('item')">Supprimer</ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+
+          <ion-item-sliding (click)="presentAlert('RECHARGE', 'Orange Money', '40 000')">
+            <ion-item>
+              <img class="icon-serv" src="assets/icon/services/1.jpg">
+              <ion-label float-left><span class="num-trans marron">77 591 96 86</span><br><span class="type-serv">RECHARGE</span></ion-label>
+              <ion-label float-right><span float-right class="num-trans green"> 40 000 CFA</span><br><span float-right class="type-serv orange">Orange Money</span></ion-label>
+            </ion-item>
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="deleteOfHistory('item')">Supprimer</ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+
+          <ion-item-sliding (click)="presentAlert('RECHARGE', 'Wizall', '23 200')">
+            <ion-item>
+              <img class="icon-serv" src="assets/icon/services/1.jpg">
+              <ion-label float-left><span class="num-trans marron">77 591 96 86</span><br><span class="type-serv">RECHARGE</span></ion-label>
+              <ion-label float-right><span float-right class="num-trans green"> 23 200 CFA</span><br><span float-right class="type-serv orange">Wizall</span></ion-label>
+            </ion-item>
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="deleteOfHistory('item')">Supprimer</ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+
+          <ion-item-sliding (click)="presentAlert('ABONNENEMENT', 'Bus DDD', '12 000')">
+            <ion-item>
+              <img class="icon-serv" src="assets/icon/services/5.jpg">
+              <ion-label float-left><span class="num-trans marron">77 591 96 86</span><br><span class="type-serv">ABONNENEMENT</span></ion-label>
+              <ion-label float-right><span float-right class="num-trans"> 12 000 CFA</span><br><span float-right class="type-serv orange">Bus DDD</span></ion-label>
+            </ion-item>
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="deleteOfHistory('item')">Supprimer</ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+
+          <ion-item-sliding (click)="presentAlert('ABONNENEMENT', 'Olympique Club', '23 000')">
+            <ion-item>
+              <img class="icon-serv" src="assets/icon/services/5.jpg">
+              <ion-label float-left><span class="num-trans marron">77 591 96 86</span><br><span class="type-serv">ABONNENEMENT</span></ion-label>
+              <ion-label float-right><span float-right class="num-trans"> 23 000 CFA</span><br><span float-right class="type-serv orange">Olympique Club</span></ion-label>
+            </ion-item>
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="deleteOfHistory('item')">Supprimer</ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
