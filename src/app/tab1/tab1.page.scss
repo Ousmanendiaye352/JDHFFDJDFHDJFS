@@ -1,6 +1,6 @@
 .nos-services {
-  max-height: 40vh;
-  height: 25vh;
+  max-height: 21vh;
+  height: 21vh;
   border: 1px solid #C7AF7D;
 }
 
@@ -10,4 +10,9 @@
 
 .nos-services .service-card ion-title {
   font-size: 1em;
+}
+
+.service-card img {
+  width: 5em;
+  height: 5em;
 }
