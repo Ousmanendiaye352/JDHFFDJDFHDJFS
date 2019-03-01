@@ -1,3 +1,7 @@
+ion-toolbar {
+  --border-color: #0d8884;
+}
+
 #user-solde, #user-name {
   color: #ffffff;
 }
@@ -12,10 +16,10 @@
 #infos-user{
   padding: 0;
   padding-bottom: 10px;
-  background-color: #0B614B;
+  background-color: #0d8884;
 }
 ion-tab-bar, ion-tab-button {
-  background-color: #0B614B;
+  background-color: #0d8884;
 }
 
 ion-tab-bar, ion-tab-button:hover {

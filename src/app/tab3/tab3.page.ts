@@ -13,6 +13,10 @@ export class Tab3Page {
 
   goToPage(page) {
     //return 0;
-    this.navCtrl.navigateRoot('/tabs/tab1');
+    if(page == 'logout') {
+      this.navCtrl.navigateRoot('/login');
+    } else {
+      this.navCtrl.navigateRoot('/menu/tabs/tab1');
+    }
   }
 }
