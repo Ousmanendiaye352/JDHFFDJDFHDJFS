@@ -13,7 +13,7 @@ export class LoginPage implements OnInit {
   }
 
   public createAccount() {
-    this.navCtrl.navigateRoot('/menu/tabs/tab1');
+    this.navCtrl.navigateRoot('/register');
   }
 
   public login() {

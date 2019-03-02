@@ -2,6 +2,18 @@ ion-toolbar {
   --border-color: #0d8884;
 }
 
+.header-md:after {
+    left: 0;
+    bottom: -8px;
+    background-position: left 0 top 0;
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    background-image: none;
+    background-repeat: repeat-x;
+    content: inherit;
+}
+
 #user-solde, #user-name {
   color: #ffffff;
 }
@@ -19,7 +31,9 @@ ion-toolbar {
   background-color: #0d8884;
 }
 ion-tab-bar, ion-tab-button {
-  background-color: #0d8884;
+  --color: black;
+  --background: #0d8884;
+  --color-selected: #fffff
 }
 
 ion-tab-bar, ion-tab-button:hover {

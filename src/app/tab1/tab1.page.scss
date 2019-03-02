@@ -6,13 +6,19 @@
 
 .nos-services .service-card {
   text-align: center;
+  height: 100%;
+  margin: auto;
+  --border-color: transparent;
+  --color: #222222;
 }
 
-.nos-services .service-card ion-title {
-  font-size: 1em;
-}
-
-.service-card img {
+.service-card ion-grid ion-row ion-col ion-img {
   width: 5em;
   height: 5em;
+  margin: auto;
+}
+
+.service-card ion-grid ion-row ion-col ion-label {
+  font-weight: bold;
+  font-size: 0.9em;
 }

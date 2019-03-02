@@ -15,6 +15,8 @@ export class Tab3Page {
     //return 0;
     if(page == 'logout') {
       this.navCtrl.navigateRoot('/login');
+    } else if(page == '/assistances') {
+      this.navCtrl.navigateRoot(page);
     } else {
       this.navCtrl.navigateRoot('/menu/tabs/tab1');
     }

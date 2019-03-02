@@ -14,7 +14,8 @@ export class Tab1Page {
   goToPage(page) {
     if(page == '/menu/tabs/tab2')
       this.navCtrl.navigateRoot('/menu/tabs/tab2');
-
+    else if(page == '/assistances')
+      this.navCtrl.navigateRoot('/assistances');
     return 0;
   }
 }
