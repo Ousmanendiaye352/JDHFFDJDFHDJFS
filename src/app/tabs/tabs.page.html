@@ -15,15 +15,15 @@
       <ion-grid style="padding: 0;">
         <ion-row id="infos-user">
           <ion-col  id="photo" align-self-center size="2">
-           <ion-content  >
-        <img id="img" [src]="currentImage" *ngIf="currentImage">
-         
-        <ion-fab vertical="bottom" horizontal="left" slot="fixed">
-           <ion-fab-button (click)="takePicture()">
-              <ion-icon name="camera"></ion-icon>
-           </ion-fab-button>
-        </ion-fab>
-        </ion-content>
+            <ion-content>
+              <img id="img" [src]="currentImage" *ngIf="currentImage">
+
+              <ion-fab vertical="bottom" horizontal="left" slot="fixed">
+                <ion-fab-button (click)="takePicture()">
+                  <ion-icon name="camera"></ion-icon>
+                </ion-fab-button>
+              </ion-fab>
+            </ion-content>
           </ion-col>
           <ion-col align-self-left size="10">
             <ion-title id="user-name" padding>

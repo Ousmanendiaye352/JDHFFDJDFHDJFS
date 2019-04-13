@@ -1,30 +1,39 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Services de rechargement</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title text-center>Services de rechargement</ion-title>
+      </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <ion-title>
-    Séléctionnez un Services
+    Séléctionnez un Service
   </ion-title>
   <ion-grid class="liste-services">
     <ion-row>
       <ion-col size="12" text-center>
-        <ion-button class="service" size="md">
+        <ion-button class="service" (click)="recharger('Orange Money')"  size="md">
           <ion-label pull-left>Orange Money</ion-label>
           <ion-img pull-right src="assets/services-recharges/om.png"></ion-img>
         </ion-button>
       </ion-col>
       <ion-col size="12" text-center>
-        <ion-button class="service" size="md">
+        <ion-button class="service" (click)="recharger('Wari')" size="md">
           <ion-label pull-left>Wari</ion-label>
           <ion-img pull-right src="assets/services-recharges/wari.png"></ion-img>
         </ion-button>
       </ion-col>
       <ion-col size="12" text-center>
-        <ion-button class="service" size="md">
-          <ion-label pull-left>Wizall</ion-label>
+        <ion-button class="service" (click)="recharger('Wizall money')" size="md">
+          <ion-label pull-left>Wizall money</ion-label>
+          <ion-img pull-right src="assets/services-recharges/wisall.png"></ion-img>
+        </ion-button>
+      </ion-col>
+      <ion-col size="12" text-center>
+        <ion-button class="service" (click)="recharger('Tigo cash')" size="md">
+          <ion-label pull-left>Tigo cash</ion-label>
           <ion-img pull-right src="assets/services-recharges/wisall.png"></ion-img>
         </ion-button>
       </ion-col>

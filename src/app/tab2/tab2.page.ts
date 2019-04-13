@@ -1,32 +1,43 @@
 import { Component } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+	selector: 'app-tab2',
+	templateUrl: 'tab2.page.html',
+	styleUrls: [ 'tab2.page.scss' ]
 })
 export class Tab2Page {
-  constructor(public alertController: AlertController) {
-  }
+	constructor(private menu: MenuController, public alertController: AlertController) {}
 
-  async presentAlert(serv, cons, sm) {
-    const alert = await this.alertController.create({
-      header: serv,
-      subHeader: 'Résumé',
-      message: '<b>RÉF:</b> 974228<br>'+
-                '<b>DATE:</b> 21/02/2019 15h12<br>'+
-                '<b>TYPE:</b> '+serv+'<br>'+
-                '<b>ENSEIGNE:</b> '+cons+'<br>'+
-                '<b>MONTANT:</b> '+sm+' CFA',
+	ngOnInit() {
+		this.menu.enable(false, 'first');
+	}
 
-      buttons: ['OK']
-    });
+	async presentAlert(serv, cons, sm) {
+		const alert = await this.alertController.create({
+			header: serv,
+			subHeader: 'Résumé',
+			message:
+				'<b>RÉF:</b> 974228<br>' +
+				'<b>DATE:</b> 21/02/2019 15h12<br>' +
+				'<b>TYPE:</b> ' +
+				serv +
+				'<br>' +
+				'<b>ENSEIGNE:</b> ' +
+				cons +
+				'<br>' +
+				'<b>MONTANT:</b> ' +
+				sm +
+				' CFA',
 
-    await alert.present();
-  }
+			buttons: [ 'OK' ]
+		});
 
-  deleteOfHistory (item) {
-    return 0;
-  }
+		await alert.present();
+	}
+
+	deleteOfHistory(item) {
+		return 0;
+	}
 }
