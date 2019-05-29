@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, AlertController } from '@ionic/angular';
+import { NavController, AlertController, MenuController } from '@ionic/angular';
 
 @Component({
 	selector: 'app-login',
