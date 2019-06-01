@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { NavController, AlertController } from '@ionic/angular';
-import { Tab2Page } from '../tab2/tab2.page';
 
 @Component({
 	selector: 'app-tab1',
