@@ -7,8 +7,9 @@
           <ion-label style="font-size: 0.9rem; font-weight: bold;">Votre paiement digital sans contact quotidien dans les campus universitaires</ion-label>
   			</div>
   			<div padding text-center style="margin-bottom: 6em;">
-  				<ion-button fill="outline" size="md" class="btn-login" (click)="login()" expand="round">Se connecter / S'inscrire</ion-button>
-  			</div>
+  				<ion-button [disabled]="isLoading" *ngIf="!hasAuthenticate" fill="outline" size="md" class="btn-login" (click)="login()" expand="round">Se connecter / S'inscrire</ion-button>
+					<ion-title class="welcome" *ngIf="hasAuthenticate" text-center>Bienvenue !</ion-title>
+				</div>
   		</ion-col>
   	</ion-row>
   </ion-grid>

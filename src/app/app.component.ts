@@ -1,10 +1,9 @@
+import { MsalService } from './services/msal.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { AuthService } from './services/auth.service';
-import { AlertService } from './services/alert.service';
 
 @Component({
 	selector: 'app-root',
@@ -16,9 +15,8 @@ export class AppComponent {
 		private platform: Platform,
 		private splashScreen: SplashScreen,
 		private statusBar: StatusBar,
-		private authService: AuthService,
-		private navCtrl: NavController,
-		private alertService: AlertService
+		private msalService: MsalService,
+		private navCtrl: NavController
 	) {
 		this.initializeApp();
 	}
@@ -28,23 +26,19 @@ export class AppComponent {
 			this.statusBar.styleDefault();
 			// Commenting splashScreen Hide, so it won't hide splashScreen before auth check
 			//this.splashScreen.hide();
-			this.authService.getToken();
+			const currentUser = this.msalService.isLoggedIn();
+			if (currentUser) {
+				// authorised
+				this.msalService.getToken();
+				this.navCtrl.navigateRoot('/menu/tabs/tab1');
+			}
 		});
 	}
 
 	// When Logout Button is pressed
 	logout() {
-		this.authService.logout().subscribe(
-			(data) => {
-				this.alertService.presentToast(data['message']);
-			},
-			(error) => {
-				console.log(error);
-			},
-			() => {
-				this.navCtrl.navigateRoot('/login');
-			}
-		);
+		this.msalService.logout();
+		this.navCtrl.navigateRoot('/login');
 	}
 
 	goToPage(url: string) {

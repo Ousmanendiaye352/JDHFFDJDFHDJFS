@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, AlertController, MenuController } from '@ionic/angular';
+import { NavController, LoadingController } from '@ionic/angular';
+import { MsalService } from 'src/app/services/msal.service';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
 	selector: 'app-login',
@@ -7,47 +9,48 @@ import { NavController, AlertController, MenuController } from '@ionic/angular';
 	styleUrls: [ './login.page.scss' ]
 })
 export class LoginPage implements OnInit {
-	constructor(private navCtrl: NavController, private alertCtrl: AlertController) {}
+	isLoading = false;
+	hasAuthenticate = false;
+	constructor(
+		private navCtrl: NavController,
+		private msalService: MsalService,
+		private alertService: AlertService,
+		public loadingController: LoadingController
+	) {}
 
 	ngOnInit() {}
 
-	public login() {
-		this.navCtrl.navigateRoot('/menu/tabs/tab1');
+	login() {
+		let _this = this;
+		_this.presentLoading();
+		this.msalService.loginSignup().then(function(isLogin) {
+			if (isLogin === true) {
+				_this.hasAuthenticate = true;
+				_this.navCtrl.navigateRoot('/menu/tabs/tab1');
+			} else {
+				_this.dismissLoading();
+				_this.alertService.presentToast('Veuillez réessayer');
+			}
+		});
 	}
 
-	async createAccount() {
-		const _self = this;
-		const alert = await this.alertCtrl.create({
-			header: 'Vérification',
-			message: 'Veuillez entrez votre numéro de carte nopalé.',
-			inputs: [
-				{
-					name: 'numCarte',
-					placeholder: 'Numéro de la carte nopalé'
-				}
-			],
-			buttons: [
-				{
-					text: 'Annuler',
-					role: 'cancel',
-					handler: (data) => {
-						console.log('Cancel clicked');
+	async presentLoading() {
+		this.isLoading = true;
+		return await this.loadingController
+			.create({
+				duration: 5000
+			})
+			.then((a) => {
+				a.present().then(() => {
+					if (!this.isLoading) {
+						a.dismiss();
 					}
-				},
-				{
-					text: 'Valider',
-					handler: (data) => {
-						if (data.numCarte.length > 7) {
-							// logged in!
-							_self.navCtrl.navigateRoot('/register');
-						} else {
-							// invalid login
-							return false;
-						}
-					}
-				}
-			]
-		});
-		await alert.present();
+				});
+			});
+	}
+
+	async dismissLoading() {
+		this.isLoading = false;
+		return await this.loadingController.dismiss();
 	}
 }
