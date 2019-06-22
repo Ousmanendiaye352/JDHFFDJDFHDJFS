@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { MsalService } from 'src/app/services/msal.service';
+import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
@@ -6,9 +7,16 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 	templateUrl: 'tabs.page.html',
 	styleUrls: [ 'tabs.page.scss' ]
 })
-export class TabsPage {
+export class TabsPage implements OnInit {
 	currentImage: any;
-	constructor(private camera: Camera) {}
+	name: string;
+	constructor(private camera: Camera, private msalService: MsalService) {}
+
+	ngOnInit() {
+		const user = this.msalService.getUser();
+		this.name = user.name;
+	}
+
 	takePicture() {
 		const options: CameraOptions = {
 			quality: 100,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { NavController, AlertController } from '@ionic/angular';
 
@@ -7,7 +7,7 @@ import { NavController, AlertController } from '@ionic/angular';
 	templateUrl: 'tab1.page.html',
 	styleUrls: [ 'tab1.page.scss' ]
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
 	constructor(private menu: MenuController, public navCtrl: NavController, private alertCtrl: AlertController) {}
 
 	ngOnInit() {
