@@ -1,0 +1,32 @@
+<ion-content padding>
+  <ion-grid>
+  	<ion-row justify-content-center>
+  		<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+      <!----  <div text-center>
+          <ion-img src="assets/icon/logo_nopale.png"></ion-img>
+          <ion-label style="font-size: 0.9rem; font-weight: bold;">Votre paiement digital sans contact quotidien dans les campus universitaires</ion-label>
+  			</div>-->
+  			<div padding>
+  
+
+          <ion-item>
+            <ion-label class="blanc"><ion-icon name="call"></ion-icon></ion-label>
+            <ion-input type="text" class="input" [(ngModel)]="credentials.numt" placeholder="Téléphone"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="blanc"><ion-icon name="card"></ion-icon></ion-label>
+            <ion-input type="text"  class="input" [(ngModel)]="credentials.numc" placeholder="Numero de  Carte nopale"></ion-input>
+          </ion-item>
+
+
+      
+  			</div>
+  			<div padding text-center>
+  				<ion-button fill="outline" size="md" class="btn-login" (click)="activerCarte()" expand="round">Activer</ion-button>
+  			</div>
+  		</ion-col>
+  	</ion-row>
+  </ion-grid>
+</ion-content>
+
+
